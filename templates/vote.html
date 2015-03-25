@@ -1,0 +1,13 @@
+<form method="POST" action="../result/">
+{% for candidates in cand_list %}
+	<input type="radio" name="cand" value="{{candidates.personID}}"/>{{candidates.IDcandidates}}. 
+	{% for p in person_list %}
+		{% if p.pk == candidates.personID %}
+			{{p.personName}}
+		{% endif %}
+	{% endfor %}
+<br/>
+{% endfor %}
+	학번 : <input type="text" name="studentNum"/><br/>
+	<input type="submit" value="투표하기" />
+</form>

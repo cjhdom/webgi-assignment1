@@ -1,0 +1,10 @@
+{% for candidates in cand_list %}
+	{{candidates.IDcandidates}}. 
+	{% for p in person_list %}
+		{% if p.pk == candidates.personID %}
+			{{p.personName}}
+		{% endif %}
+	{% endfor %}
+	총 {{candidates.cnt}}표
+<br/>
+{% endfor %}
